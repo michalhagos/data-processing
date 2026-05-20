@@ -13,4 +13,35 @@ public class Person {
         this.lastName = lastName;
         this.age = age;
     }
+
+    // returns the first name of the person
+    public String getFirstName() {
+        return firstName;
+    }
+
+    // returns the last name of the person
+    public String getLastName() {
+        return lastName;
+    }
+
+    // returns the age of the person
+    public int getAge() {
+        return age;
+    }
+    // updates the first name of the person
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    // updates the last name of the person
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    // updates the age of the person
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
 }
