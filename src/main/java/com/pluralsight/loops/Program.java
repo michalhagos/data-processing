@@ -1,7 +1,21 @@
 package com.pluralsight.loops;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Program {
     public static void main(String[] args) {
-
+// create a list of 10 people to search through
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Marcus", "Bennett", 34));
+        people.add(new Person("Sofia", "Ramirez", 28));
+        people.add(new Person("Aiden", "Nakamura", 45));
+        people.add(new Person("Layla", "Hassan", 22));
+        people.add(new Person("Nadia", "Okafor", 31));
+        people.add(new Person("Carlos", "Petrov", 19));
+        people.add(new Person("Priya", "Sharma", 52));
+        people.add(new Person("Jordan", "Bennett", 27));
+        people.add(new Person("Elena", "Torres", 38));
+        people.add(new Person("Oliver", "Chen", 41));
     }
 }
