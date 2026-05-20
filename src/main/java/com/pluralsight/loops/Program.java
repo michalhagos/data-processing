@@ -2,6 +2,7 @@ package com.pluralsight.loops;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
@@ -17,5 +18,22 @@ public class Program {
         people.add(new Person("Jordan", "Bennett", 27));
         people.add(new Person("Elena", "Torres", 38));
         people.add(new Person("Oliver", "Chen", 41));
+
+
+        // ask the user for a name to search
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a name to search (first or last): ");
+        String searchName = scanner.nextLine().trim().toLowerCase();
+
+
+
+
     }
+
+
+
+
+
+
+
 }
