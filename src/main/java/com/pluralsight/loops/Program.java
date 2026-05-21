@@ -56,9 +56,16 @@ public class Program {
             System.out.println("Found " + matchingPeople.size() + " results");
         }
 
+// calculate the average age of all people in the original list
+// first adding up all the ages using  a for loop
+        double totalAge = 0;
+        for (Person person : people) {
+            totalAge += person.getAge();
+        }
 
-
-
+// then divide by the number of people to get the average
+        double averageAge = totalAge / people.size();
+        System.out.printf("Average age of all people: %.1f", averageAge);
 
 
 
