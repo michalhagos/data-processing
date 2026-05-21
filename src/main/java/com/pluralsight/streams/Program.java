@@ -62,13 +62,19 @@ public class Program {
 
 // sorted() sorts the stream by age
         Person oldestPerson = people.stream()
-                .sorted(Comparator.comparingInt(Person::getAge).reversed())
-                .findFirst()
+                .max(Comparator.comparingInt(Person::getAge))
                 .orElse(null);
 
         System.out.println("Oldest person: " + oldestPerson);
 
+// sorted() sorts the stream by age
+// Comparator.comparingInt uses method reference to compare by age
 
+        Person youngestPerson = people.stream().
+                min(Comparator.comparingInt(Person::getAge))
+                .orElse(null);
+
+        System.out.println("Youngest person: " + youngestPerson);
 
 
     }
