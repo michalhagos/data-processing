@@ -76,7 +76,7 @@ public class Program {
 
         System.out.println("Youngest person: " + youngestPerson);
 
-
+        scanner.close();
     }
 
 
