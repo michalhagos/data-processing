@@ -5,6 +5,7 @@ import com.pluralsight.Person;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Program {
     public static void main(String[] args) {
@@ -26,6 +27,24 @@ public class Program {
         System.out.print("Enter a name to search (first or last): ");
         String searchName = scanner.nextLine().trim().toLowerCase();
 
+// use a stream to search for people by name
+// filter will help us keep only the people whose first or last name matches
+// collect turns the stream back into a list
+        List<Person> matchingPeople = people.stream()
+                .filter(person -> person.getFirstName().toLowerCase().contains(searchName)
+                        || person.getLastName().toLowerCase().contains(searchName))
+                .collect(Collectors.toList());
+
+// display the matching people
+        System.out.println("Search Results for: " + searchName );
+        if (matchingPeople.isEmpty()) {
+            System.out.println("No people found with that name.");
+        } else {
+            for (Person person : matchingPeople) {
+                System.out.println(person);
+            }
+            System.out.println("Found " + matchingPeople.size() + " results");
+        }
 
     }
 
