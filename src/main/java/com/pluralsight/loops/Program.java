@@ -25,6 +25,40 @@ public class Program {
         System.out.println("Enter a name to search (first or last): ");
         String searchName = scanner.nextLine().trim().toLowerCase();
 
+// create a new Array list to hold the people that match the search with a name matching list
+        List<Person> matchingPeople = new ArrayList<>();
+
+// loop through every person in the list using for each
+        for (Person person : people) {
+
+            // check if the first name or last name matches the search
+            //  using toLowerCase so the search is not case-sensitive
+            boolean firstNameMatches = person.getFirstName().toLowerCase().contains(searchName);
+            boolean lastNameMatches = person.getLastName().toLowerCase().contains(searchName);
+
+            // if either name matches add this person to the results means if one of them true
+            if (firstNameMatches || lastNameMatches) {
+                matchingPeople.add(person);
+            }
+        }
+
+// displaying the matching people
+        System.out.println("\n Search Results for: " + searchName );
+
+// check if we found anyone with the searched names
+        if (matchingPeople.size() == 0) {
+            System.out.println("No people found with that name.");
+        } else {
+            // looping through the matching people and print each one
+            for (Person person : matchingPeople) {
+                System.out.println(person);
+            }
+            System.out.println("Found " + matchingPeople.size() + " results");
+        }
+
+
+
+
 
 
 
