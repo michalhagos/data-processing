@@ -82,7 +82,20 @@ public class Program {
 
         System.out.println("Oldest person: " + oldestPerson);
 
+// find the youngest person in the list
+// start with the first person as youngest
+        Person youngestPerson = people.get(0);
 
+// loop through every person in the list
+        for (Person person : people) {
+            // if this person is younger than our current youngest
+            // update our current youngest
+            if (person.getAge() < youngestPerson.getAge()) {
+                youngestPerson = person;
+            }
+        }
+
+        System.out.println("Youngest person: " + youngestPerson);
 
     }
 
