@@ -3,6 +3,7 @@ package com.pluralsight.streams;
 import com.pluralsight.Person;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -47,15 +48,26 @@ public class Program {
         }
 
 
-        double averageAge = people.stream()
-                // mapToInt uses method reference to get each person's age
-                .mapToInt(Person::getAge)
-                // average calculates the average of all those ages
-                .average()
-                // orElse returns 0 if the list is empty
-                .orElse(0);
 
+        int totalAge = people.stream()
+                // map() transforms each person object into just their age number
+                .map(Person::getAge)
+
+                // Integer::sum is a method reference that adds two numbers together
+                .reduce(0, Integer::sum);
+
+// divide total by number of people to get the average
+        double averageAge = (double) totalAge / people.size();
         System.out.printf("Average age of all people: %.1f%n", averageAge);
+
+// sorted() sorts the stream by age
+        Person oldestPerson = people.stream()
+                .sorted(Comparator.comparingInt(Person::getAge).reversed())
+                .findFirst()
+                .orElse(null);
+
+        System.out.println("Oldest person: " + oldestPerson);
+
 
 
 
