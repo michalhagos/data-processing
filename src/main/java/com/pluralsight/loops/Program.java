@@ -67,6 +67,21 @@ public class Program {
         double averageAge = totalAge / people.size();
         System.out.printf("Average age of all people: %.1f", averageAge);
 
+// find the oldest person in the list
+// starting with the first person as oldest
+        Person oldestPerson = people.get(0);
+
+// loop through every person in the list
+        for (Person person : people) {
+            // if this person is older than our current oldest
+            // update our current oldest
+            if (person.getAge() > oldestPerson.getAge()) {
+                oldestPerson = person;
+            }
+        }
+
+        System.out.println("Oldest person: " + oldestPerson);
+
 
 
     }
