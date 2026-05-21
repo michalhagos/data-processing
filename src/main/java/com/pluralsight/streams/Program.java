@@ -46,6 +46,19 @@ public class Program {
             System.out.println("Found " + matchingPeople.size() + " results");
         }
 
+
+        double averageAge = people.stream()
+                // mapToInt uses method reference to get each person's age
+                .mapToInt(Person::getAge)
+                // average calculates the average of all those ages
+                .average()
+                // orElse returns 0 if the list is empty
+                .orElse(0);
+
+        System.out.printf("Average age of all people: %.1f%n", averageAge);
+
+
+
     }
 
 
